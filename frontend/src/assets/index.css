@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #F8F9FA;
+  /* Premium light off-white */
+  color: #212529;
+  /* Dark text for contrast */
+}
+
+/* Custom Utilities for Premium Look */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.soft-shadow {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+}
+
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #0d6efd, #0dcaf0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Intro Section Specific */
+.bg-shape-intro {
+  width: 150vw;
+  height: 150vw;
+  max-width: 800px;
+  max-height: 800px;
+  background: radial-gradient(circle, #0dcaf0 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.profile-placeholder {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1/1;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Global Section Padding */
+.section-padding {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+/* Project Card CSS Hover Effects */
+.project-card {
+  cursor: pointer;
+}
+
+.project-card .project-card-image {
+  transition: transform 0.3s ease;
+}
+
+.project-card.hover-lift:hover .project-card-image {
+  transform: scale(1.05);
+}
+
+.project-card .project-card-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.project-card.hover-lift:hover .project-card-overlay {
+  opacity: 1;
+}
+
+.project-card .project-card-overlay-icon {
+  width: 60px;
+  height: 60px;
+  transform: scale(0.5);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-card.hover-lift:hover .project-card-overlay-icon {
+  transform: scale(1);
+}
+
+/* Fixed height for project modal on desktop */
+@media (min-width: 992px) {
+  .project-modal-row {
+    height: 750px;
+    max-height: 85vh;
+  }
+}
+
+/* Modal Backdrop Blur Effect */
+.modal-backdrop.blur-backdrop {
+  opacity: 1 !important;
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
