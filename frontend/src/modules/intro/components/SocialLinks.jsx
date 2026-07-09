@@ -1,1 +1,3 @@
-export default function SocialLinks() { return (<div>SocialLinks Component</div>); }
+export default function SocialLinks() {
+  return <div>SocialLinks Component</div>;
+}

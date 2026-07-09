@@ -8,16 +8,16 @@ export default function ProjectList() {
 
   return (
     <>
-      <section className="section-padding bg-white" id="projects">
+      <section className="section-padding bg-body" id="projects">
         <div className="container">
           <div className="text-center mb-5">
             <h2 className="display-5 fw-bold mb-3">Featured Projects</h2>
-            <p className="text-secondary lead">Some of my recent work.</p>
+            <p className="text-body-secondary lead">Some of my recent work.</p>
           </div>
 
           <div className="row g-4">
-            {projects.map((project, index) => (
-              <div className="col-md-6 col-lg-4" key={index}>
+            {projects.map((project) => (
+              <div className="col-md-6 col-lg-4" key={project.title}>
                 <ProjectCard project={project} onClick={() => setSelectedProject(project)} />
               </div>
             ))}
@@ -25,10 +25,7 @@ export default function ProjectList() {
         </div>
       </section>
 
-      <ProjectModal 
-        project={selectedProject} 
-        onClose={() => setSelectedProject(null)} 
-      />
+      <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
     </>
   );
 }

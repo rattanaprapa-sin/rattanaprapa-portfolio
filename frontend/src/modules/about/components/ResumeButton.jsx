@@ -1,1 +1,3 @@
-export default function ResumeButton() { return (<div>ResumeButton Component</div>); }
+export default function ResumeButton() {
+  return <div>ResumeButton Component</div>;
+}

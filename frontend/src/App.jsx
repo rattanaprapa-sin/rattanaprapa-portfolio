@@ -19,7 +19,7 @@ function App() {
       <ContactForm />
       <ScrollToTop />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,1 +1,3 @@
-export default function SkillIcon() { return (<div>SkillIcon Component</div>); }
+export default function SkillIcon() {
+  return <div>SkillIcon Component</div>;
+}

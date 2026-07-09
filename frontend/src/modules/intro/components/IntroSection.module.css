@@ -1,0 +1,18 @@
+.bgShapeIntro {
+  width: 150vw;
+  height: 150vw;
+  max-width: 800px;
+  max-height: 800px;
+  background: radial-gradient(circle, #0dcaf0 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.introProfileImg {
+  object-position: center 20%;
+  pointer-events: none;
+}
+
+:global([data-bs-theme="light"]) .imgContainer {
+  background: radial-gradient(circle, #e0f7fa 0%, #ffffff 100%);
+}

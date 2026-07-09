@@ -1,1 +1,3 @@
-export default function ContactInfo() { return (<div>ContactInfo Component</div>); }
+export default function ContactInfo() {
+  return <div>ContactInfo Component</div>;
+}
