@@ -104,7 +104,7 @@ export default function Navbar() {
                 size="md"
                 className="cursor-pointer"
               >
-                Hire Me
+                Contact Me
               </Button>
             </li>
           </ul>

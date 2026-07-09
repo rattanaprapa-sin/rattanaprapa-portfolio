@@ -113,7 +113,7 @@ export const contacts = [
   },
   {
     title: 'LinkedIn',
-    value: 'LinkedIn Profile',
+    value: 'Rattanaprapa Sinkrathok',
     link: 'https://www.linkedin.com/in/rattanaprapa-sinkrathok-8ab510386',
   },
 ];
