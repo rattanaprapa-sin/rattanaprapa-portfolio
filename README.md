@@ -1,4 +1,4 @@
-# 👨‍💻 Rattanaprapa Sinkrathok - Personal Portfolio
+#  Rattanaprapa Sinkrathok - Personal Portfolio
 
 ยินดีต้อนรับสู่เว็บพอร์ตโฟลิโอ พื้นที่นี้ถูกจัดทำขึ้นเพื่อรวบรวมผลงาน ประสบการณ์การทำงาน และทักษะทางด้านซอฟต์แวร์ (Software Development) ปัจจุบันโปรเจกต์นี้โฟกัสการพัฒนาในส่วนของ **Frontend (React)** เป็นหลัก โดยได้เตรียมโครงสร้างแบบ Monorepo เพื่อรองรับการพัฒนา API และฟีเจอร์ฝั่ง Backend เพิ่มเติมในอนาคต
 
