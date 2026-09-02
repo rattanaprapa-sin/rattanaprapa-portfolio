@@ -4,17 +4,17 @@ import PropTypes from 'prop-types';
 export default function Badge({ children, variant = 'primary-soft', pill = true, size = 'md', className = '', ...props }) {
   // Define standard variant styles
   const variants = {
-    'primary-soft': 'bg-primary bg-opacity-10 text-primary',
-    'body-tertiary': 'bg-body-tertiary text-body border',
+    'primary-soft': 'bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-300',
+    'body-tertiary': 'bg-slate-100 text-slate-700 border border-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700',
   };
 
   const variantClass = variants[variant] || variants['primary-soft'];
-  const shapeClass = pill ? 'rounded-pill' : 'rounded-2';
-  const sizeClass = size === 'sm' ? 'px-2 py-1 fs-7' : 'px-3 py-2 fs-6';
+  const shapeClass = pill ? 'rounded-full' : 'rounded-md';
+  const sizeClass = size === 'sm' ? 'px-2.5 py-0.5 text-xs' : 'px-3.5 py-1.5 text-sm';
 
   return (
     <span
-      className={`badge ${variantClass} ${shapeClass} fw-normal ${sizeClass} ${className}`}
+      className={`inline-block font-medium ${variantClass} ${shapeClass} ${sizeClass} ${className}`}
       {...props}
     >
       {children}

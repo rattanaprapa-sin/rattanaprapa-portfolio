@@ -1,6 +1,6 @@
 export const projects = [
   {
-    title: 'Candidate Pool Management System',
+    title: 'Applicant Management System',
     date: 'Jan 2026 - Apr 2026',
     description:
       'Built a web app to replace Excel for HR, helping managers track candidates and reassign tasks.',
@@ -62,10 +62,9 @@ export const experiences = [
     company: 'TQM Insurance Broker',
     duration: 'Jan 2026 - Apr 2026',
     description: [
-      'Developed a full-stack Candidate Pool management system utilizing VS Code, React, and Express.js to replace manual Excel-based tracking for the HR hiring workflow.',
-      'Architected database schemas with Microsoft SQL Server and managed data queries and database administration using DBeaver.',
-      'Implemented the frontend architecture for a digital intern Timesheet system using React, including conditional logic that gates task and clock-out inputs behind clock-in status and flags missing clock-outs as absent, integrating with Express.js APIs and a PostgreSQL database.',
-      'Used GitLab and SourceTree for version control and collaboration across all projects.',
+      'Applicant Management System: Replaced a manual, Excel-based HR hiring workflow by developing a full-stack web application. Built the user interface with React, developed backend services with Express.js, and architected the underlying database schemas using Microsoft SQL Server and DBeaver.',
+      'Digital Timesheet System: Implemented the frontend architecture for an intern time-tracking system. Engineered complex conditional logic in React to gate task inputs and clock-outs based on active clock-in status, seamlessly integrating with Express.js APIs and a PostgreSQL database.',
+      'Development Workflow: Maintained clean code repositories and ensured smooth version control across all active projects utilizing GitLab and SourceTree.',
     ],
   },
 ];
@@ -87,7 +86,7 @@ export const categories = [
   },
   {
     title: 'Backend',
-    skills: ['.NET', 'Express.js (Node.js)', 'RESTful APIs'],
+    skills: ['Express.js (Node.js)', 'RESTful APIs'],
   },
   {
     title: 'Databases',
@@ -95,7 +94,7 @@ export const categories = [
   },
   {
     title: 'Tools & Version Control',
-    skills: ['VS Code', 'GitLab', 'SourceTree', 'Git', 'Postman', 'DBeaver', 'Figma'],
+    skills: ['GitLab', 'SourceTree', 'GitHub', 'Postman', 'DBeaver'],
   },
 ];
 

@@ -23,17 +23,7 @@ export default function ScrollToTop() {
       {isVisible && (
         <button
           onClick={() => scroll.scrollToTop({ duration: 500, smooth: true })}
-          className="btn btn-primary rounded-circle shadow-lg d-flex align-items-center justify-content-center hover-lift text-white"
-          style={{
-            position: 'fixed',
-            bottom: '30px',
-            right: '30px',
-            width: '50px',
-            height: '50px',
-            zIndex: 1000,
-            cursor: 'pointer',
-            animation: 'fadeIn 0.3s',
-          }}
+          className="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 text-white rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 z-50 animate-fade-up focus:outline-none"
           aria-label="Scroll to top"
         >
           <svg

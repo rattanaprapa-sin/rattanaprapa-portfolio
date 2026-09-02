@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
@@ -7,9 +17,64 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
+  @apply bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-200 transition-colors duration-300;
 }
 
 /* Custom Utilities for Premium Look */
+
+/* =========================================
+   ANIMATIONS & GIMMICKS
+   ========================================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(13, 110, 253, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(13, 110, 253, 0); }
+}
+
+.btn-glow:hover {
+  animation: pulseGlow 1.5s infinite;
+}
+
+/* Glassmorphism Effect */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dark .glass-panel {
+  background: rgba(30, 41, 59, 0.7) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ========================================= */
 
 .soft-shadow {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
@@ -26,24 +91,9 @@ body {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
 }
 
-[data-bs-theme='dark'] .hover-lift:hover {
+.dark .hover-lift:hover {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
   border-color: rgba(255, 255, 255, 0.1) !important;
-}
-
-[data-bs-theme='dark'] {
-  --bs-primary: #6ea8fe;
-  --bs-primary-rgb: 110, 168, 254;
-}
-
-[data-bs-theme='dark'] .btn-primary {
-  color: #212529 !important;
-  font-weight: 500;
-}
-
-[data-bs-theme='dark'] .card {
-  background-color: #2b3035; /* bg-body-tertiary */
-  border: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
 
 .cursor-pointer {
@@ -57,38 +107,9 @@ body {
   background-clip: text;
 }
 
-[data-bs-theme='dark'] .text-gradient {
+.dark .text-gradient {
   background: linear-gradient(135deg, #6ea8fe, #0dcaf0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-/* Global Section Padding */
-.section-padding {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
-@media (min-width: 768px) {
-  .section-padding {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-}
-
-/* Fixed height for project modal on desktop */
-@media (min-width: 992px) {
-  .project-modal-row {
-    height: 750px;
-    max-height: 85vh;
-  }
-}
-
-/* Modal Backdrop Blur Effect */
-.modal-backdrop.blur-backdrop {
-  opacity: 1 !important;
-  background-color: rgba(0, 0, 0, 0.4) !important;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
 }
