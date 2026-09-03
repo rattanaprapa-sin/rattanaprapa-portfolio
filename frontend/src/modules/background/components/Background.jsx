@@ -4,7 +4,7 @@ import { experiences, educationList } from '../../../data/portfolioData';
 
 export default function Background() {
   return (
-    <section className="py-10 lg:py-28 bg-white dark:bg-slate-900 relative" id="background">
+    <section className="py-10 lg:py-28 bg-white dark:bg-slate-950 relative" id="background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         
         <div className="mb-10 md:mb-20">

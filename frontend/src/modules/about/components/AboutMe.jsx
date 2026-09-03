@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Badge from '../../../components/ui/Badge';
 import Button from '../../../components/ui/Button';
@@ -7,6 +7,27 @@ export default function AboutMe() {
   const resumeUrl = '/Resume/Resume - Rattanaprapa Sinkrathok .pdf';
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPdfLoaded, setIsPdfLoaded] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobileView(window.innerWidth < 768);
+    // Initial check
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Prevent background scrolling when modal is open
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isModalOpen]);
 
   const handleOpenModal = () => {
     setIsPdfLoaded(false); // Reset loading state when opening
@@ -19,7 +40,7 @@ export default function AboutMe() {
 
   return (
     <>
-      <section className="py-10 lg:py-32 bg-white dark:bg-[#050505] overflow-hidden" id="about">
+      <section className="py-10 lg:py-32 bg-white dark:bg-slate-950 overflow-hidden" id="about">
         <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-24 items-center">
             
@@ -163,26 +184,29 @@ export default function AboutMe() {
             </div>
             
             {/* Modal Body / PDF Viewer */}
-            <div className="flex-grow bg-white dark:bg-[#1a1a1a] overflow-hidden relative rounded-b-2xl">
+            <div className="flex-grow bg-white dark:bg-[#1a1a1a] overflow-auto relative rounded-b-2xl touch-pan-x touch-pan-y touch-pinch-zoom">
               
               {/* Loading State */}
-              {!isPdfLoaded && (
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-white dark:bg-[#1a1a1a] z-10">
-                  <div className="w-10 h-10 border-4 border-blue-500/20 border-t-blue-500 rounded-full animate-spin mb-4"></div>
-                  <p className="text-slate-500 dark:text-slate-400 font-medium animate-pulse">Loading Document...</p>
-                </div>
-              )}
+              <div 
+                className={`absolute inset-0 flex flex-col items-center justify-center bg-white dark:bg-[#1a1a1a] z-10 transition-opacity duration-700 ease-out ${isPdfLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+              >
+                <div className="w-10 h-10 border-4 border-blue-500/20 border-t-blue-500 rounded-full animate-spin mb-4"></div>
+                <p className="text-slate-500 dark:text-slate-400 font-medium animate-pulse">Loading Document...</p>
+              </div>
 
               {/* PDF Iframe */}
-              <iframe 
-                src={`${resumeUrl}#navpanes=0&view=Fit`} 
-                title="Rattanaprapa Resume"
-                className={`w-full h-full border-none transition-opacity duration-1000 ease-out ${isPdfLoaded ? 'opacity-100' : 'opacity-0'}`}
-                onLoad={() => {
-                  // Add a slight delay because PDF viewers sometimes trigger onLoad right before fully painting
-                  setTimeout(() => setIsPdfLoaded(true), 400);
-                }}
-              />
+              <div className="w-full h-full min-h-[100%] relative">
+                <iframe 
+                  src={`${resumeUrl}${isMobileView ? '#toolbar=0&navpanes=0&view=Fit' : '#navpanes=0&view=FitH'}`} 
+                  title="Rattanaprapa Resume"
+                  className="absolute inset-0 w-full h-full border-none"
+                  onLoad={() => {
+                    // Give the browser 1.2 seconds to finish any reflow/zoom animations internally
+                    // before fading out the loading overlay. The iframe is always fully opaque underneath.
+                    setTimeout(() => setIsPdfLoaded(true), 1200);
+                  }}
+                />
+              </div>
             </div>
 
           </div>

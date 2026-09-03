@@ -32,18 +32,24 @@ export default function ProjectList() {
           </div>
 
           {/* Showcase Stack */}
-          <div className="flex flex-col gap-12 lg:gap-40">
+          <div className="flex flex-col gap-0 lg:gap-40">
             {projects.map((project, index) => (
-              <div 
-                className="animate-fade-up" 
-                style={{ animationDelay: `${(index % 2) * 150}ms` }} 
-                key={project.title}
-              >
-                <ProjectCard 
-                  project={project} 
-                  index={index}
-                  onClick={() => setSelectedProject(project)} 
-                />
+              <div key={project.title} className="flex flex-col">
+                <div 
+                  className="animate-fade-up" 
+                  style={{ animationDelay: `${(index % 2) * 150}ms` }} 
+                >
+                  <ProjectCard 
+                    project={project} 
+                    index={index}
+                    onClick={() => setSelectedProject(project)} 
+                  />
+                </div>
+                
+                {/* Mobile Divider */}
+                {index !== projects.length - 1 && (
+                  <div className="w-full h-px bg-slate-200 dark:bg-slate-700 my-12 lg:hidden"></div>
+                )}
               </div>
             ))}
           </div>

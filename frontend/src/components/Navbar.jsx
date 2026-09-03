@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, animateScroll as scroll } from 'react-scroll';
 import { useTheme } from '../contexts/ThemeContext';
 import Button from './ui/Button';
@@ -12,14 +12,20 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('top');
   const [isScrolling, setIsScrolling] = useState(false);
+  const scrollTimeoutRef = useRef(null);
 
   const handleNavClick = (to) => {
     setActiveSection(to);
     setIsScrolling(true);
-    // Lock scroll spy briefly
-    setTimeout(() => {
+    
+    if (scrollTimeoutRef.current) {
+      clearTimeout(scrollTimeoutRef.current);
+    }
+    
+    // Lock scroll spy until the native smooth scroll completes
+    scrollTimeoutRef.current = setTimeout(() => {
       setIsScrolling(false);
-    }, 50);
+    }, 1000);
   };
 
   const navItems = [
@@ -28,6 +34,7 @@ export default function Navbar() {
     { name: 'Skills', to: 'skills' },
     { name: 'Background', to: 'background' },
     { name: 'Projects', to: 'projects' },
+    { name: 'Contact', to: 'contact' },
   ];
 
   useEffect(() => {

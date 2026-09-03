@@ -18,6 +18,7 @@ html {
 body {
   font-family: 'Inter', sans-serif;
   @apply bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-200 transition-colors duration-300;
+  @apply selection:bg-blue-500/20 selection:text-blue-900 dark:selection:bg-blue-400/30 dark:selection:text-blue-50;
 }
 
 /* Custom Utilities for Premium Look */
