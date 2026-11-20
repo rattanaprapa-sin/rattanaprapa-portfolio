@@ -35,7 +35,7 @@ export default function ContactForm() {
               Let's work <br className="hidden lg:block"/> together.
             </h2>
             <p className="text-lg text-slate-600 dark:text-slate-400 max-w-md font-light leading-relaxed">
-              I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+              Feel free to reach out if you have a job opportunity or would like to connect.
             </p>
           </div>
 

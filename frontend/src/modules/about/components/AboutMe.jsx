@@ -96,9 +96,9 @@ export default function AboutMe() {
                 className="flex flex-wrap gap-3 mb-8"
               >
                 {[
-                  "Full Stack Developer", 
-                  "Frontend Developer", 
-                  "Backend Developer"
+                  "Software Tester", 
+                  "Quality Assurance", 
+                  "Manual & API Testing"
                 ].map((text, i) => (
                   <motion.div 
                     key={i}
@@ -114,7 +114,7 @@ export default function AboutMe() {
               
               <div className="prose sm:prose-lg dark:prose-invert max-w-none text-slate-600 dark:text-slate-400 font-light leading-relaxed mb-8 sm:mb-10">
                 <p className="mb-6 text-base sm:text-lg">
-                  I am a recent IT graduate and Full Stack Developer with internship experience in building web applications. I work primarily with React and Express.js. I have practical experience in designing relational databases and integrating RESTful APIs. My focus is on writing maintainable code and building clean, functional user interfaces.
+                  I am a recent IT graduate looking to start my career as a Software Tester. During my internship as a Full Stack Developer, I built web applications using React, Express.js, and SQL databases. Because I have built both frontend pages and backend APIs myself, I understand how data flows through a system and where bugs often happen. I enjoy testing user flows, checking APIs with Postman, verifying data in SQL, and making sure applications work smoothly for users.
                 </p>
               </div>
 

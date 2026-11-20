@@ -125,7 +125,7 @@ export default function SkillSet() {
             transition={{ delay: 0.1 }}
             className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto"
           >
-            A curated list of technologies I use to build robust and beautiful applications.
+            Tools and technologies I use to test and build web applications.
           </motion.p>
         </div>
 

@@ -62,9 +62,9 @@ export const experiences = [
     company: 'TQM Insurance Broker',
     duration: 'Jan 2026 - Apr 2026',
     description: [
-      'Applicant Management System: Replaced a manual, Excel-based HR hiring workflow by developing a full-stack web application. Built the user interface with React, developed backend services with Express.js, and architected the underlying database schemas using Microsoft SQL Server and DBeaver.',
-      'Digital Timesheet System: Implemented the frontend architecture for an intern time-tracking system. Engineered complex conditional logic in React to gate task inputs and clock-outs based on active clock-in status, seamlessly integrating with Express.js APIs and a PostgreSQL database.',
-      'Development Workflow: Maintained clean code repositories and ensured smooth version control across all active projects utilizing GitLab and SourceTree.',
+      'Applicant Management System: Built a web app to replace Excel sheets for HR. Created the frontend with React, the backend API with Express.js, and set up the database tables in SQL Server using DBeaver. Tested form validations, duplicate checks, and API responses to make sure data was saved accurately.',
+      'Digital Timesheet System: Built the React frontend for an intern time-tracking system. Added checks so users could only log tasks or clock out after clocking in, and connected the pages to Express.js APIs and a PostgreSQL database.',
+      'Team Workflow: Used GitLab and SourceTree to manage code versions and collaborate with the team.',
     ],
   },
 ];

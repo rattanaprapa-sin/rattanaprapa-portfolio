@@ -23,7 +23,7 @@ export default function Background() {
             transition={{ delay: 0.1 }}
             className="text-lg text-slate-500 dark:text-slate-400"
           >
-            A summary of my professional journey and academic foundation.
+            My internship experience and education.
           </motion.p>
         </div>
 

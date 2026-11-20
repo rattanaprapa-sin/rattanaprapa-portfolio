@@ -25,7 +25,7 @@ export default function ProjectList() {
               
               <div className="flex-1 md:pl-12 md:border-l border-slate-200 dark:border-slate-800 mt-4 md:mt-0">
                 <p className="text-base md:text-xl text-slate-500 dark:text-slate-400 leading-relaxed font-light max-w-lg">
-                  A curated selection of my best work, presented as live web applications. Click any project to explore the details.
+                  Projects I built during university and my internship. Click any project to see more details.
                 </p>
               </div>
             </div>

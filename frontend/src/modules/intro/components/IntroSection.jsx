@@ -43,11 +43,11 @@ export default function IntroSection() {
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500 inline-block mt-2">
                 <TypeAnimation
                   sequence={[
-                    'Full Stack Developer',
+                    'Software Tester',
                     2000,
-                    'Frontend Developer',
+                    'QA Tester',
                     2000,
-                    'Backend Developer',
+                    'Manual & API Tester',
                     2000,
                   ]}
                   wrapper="span"
@@ -62,11 +62,11 @@ export default function IntroSection() {
                 transition={{ duration: 1, delay: 1 }}
                 className="text-xl sm:text-3xl text-slate-500 dark:text-slate-400 font-semibold mt-4 inline-block"
               >
-                Building Web Applications
+                Ensuring Software Quality
               </motion.span>
             </h1>
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0">
-              I design databases and build web applications using React and Express.js.
+              I test web applications, check APIs, and verify database data to make sure everything works as expected.
             </p>
             <div className="flex flex-row flex-wrap gap-4 justify-center lg:justify-start">
               <Button
